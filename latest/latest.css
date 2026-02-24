@@ -1,0 +1,131 @@
+#top > #navbar > a > #nav-btn2.nav-btn {
+  background-color: #9A031E;
+  color: #FFC75F;
+}
+
+
+
+body {
+  height: 500px;
+  width: 100%;
+  background-color: #9A031E;
+}
+
+#sect-1 {
+  margin-top: 50px;
+}
+
+.sections {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+#bg-merge1 {
+  position: absolute;
+  display: flex;
+  color: #701f2e;
+  text-align: 0 auto;
+  grid-row: 1;
+  grid-column: 1;
+  font-size: 80px;
+  top: 20px;
+  justify-self: center;
+}
+
+#bg-merge2 {
+  position: relative;
+  display: flex;
+  color: #701f2e;
+  text-align: 0 auto;
+  grid-row: 1;
+  grid-column: 1;
+  font-size: 80px;
+  justify-self: center;
+  margin: 0;
+}
+
+#txt {
+  color: rgb(246, 246, 68);
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 1;
+  margin-left: 30px;
+  font-size: 2.5rem;
+}
+
+.container {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  grid-template-areas: "crd-1 crd-1 ." ". crd-2 crd-2" "crd-3 crd-3 .";
+}
+
+.card {
+  background-color: #9A031E;
+  margin: 30px;
+  max-width: 457px;
+  min-width: 290px;
+  max-height: 450px;
+  box-shadow: 2px 2px 5px #000000;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow: auto;
+  padding: 5px;
+}
+
+.card::-webkit-scrollbar {
+  display: none;
+}
+
+.card:nth-child(2) {
+  width: 100%;
+  place-self: center end;
+}
+
+.card-img {
+  width: 95%;
+  height: 95%;
+  border-radius: 1.5rem;
+  align-self: center;
+  padding: 10px;
+}
+
+.card-title{
+  color: beige;
+  font-size: 1.8rem;
+}
+
+.card-content {
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 5px;
+}
+
+@media (max-width: 590px) {
+  .container {
+    grid-template-areas: "crd-1 crd-1 crd-1" "crd-2 crd-2 crd-2" "crd-3 crd-3 crd-3";
+  }
+
+.card {
+  margin: 10px;
+}
+
+  .card:nth-child(2) {
+    width: 0px;
+    min-width: 290px;
+    max-width: 457px;
+  }
+}
+
+#container2 > .card > .card-title {
+  color: rgb(255, 177, 60);
+}
+@media (max-width: 340px) {
+  .card {
+    min-width: 290px;
+    max-width: 310px;
+  }
+}

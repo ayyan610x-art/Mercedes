@@ -1,0 +1,243 @@
+#top > #navbar > a > #nav-btn3.nav-btn {
+  background-color: #9A031E;
+  color: #FFC75F;
+}
+
+input[type="radio"] {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+}
+
+:root {
+    --grid-temp:repeat(4, 1fr) ;
+    --filterslide: -200px;
+    --articlew: 200px;
+    --filterdecp1:absolute;
+    --filterdecz1:-2;
+    --filterdecv1:hidden;
+    --filterdecp2:absolute;
+    --filterdecz2:-2;
+    --filterdecv2:hidden;
+    --filterdecp3:absolute;
+    --filterdecz3:-2;
+    --filterdecv3:hidden;
+    --filterdecp4:absolute;
+    --filterdecz4:-2;
+    --filterdecv4:hidden;
+}
+
+:root:has(#filter-btn:checked) {
+    --filterslide: 0px;
+}
+
+:root:has(#no:checked){
+    --filterdecp1:static;
+    --filterdecz1:100;
+    --filterdecv1:visible;
+    --filterdecp2:static;
+    --filterdecz2:100;
+    --filterdecv2:visible;
+    --filterdecp3:static;
+    --filterdecz3:100;
+    --filterdecv3:visible;
+    --filterdecp4:static;
+    --filterdecz4:100;
+    --filterdecv4:visible;
+}
+
+:root:has(#ev:checked){
+    --filterdecp1:static;
+    --filterdecz1:100;
+    --filterdecv1:visible;
+}
+
+:root:has(#sedan:checked){
+    --filterdecp2:static;
+    --filterdecz2:100;
+    --filterdecv2:visible;
+}
+
+:root:has(#suv:checked){
+    --filterdecp3:static;
+    --filterdecz3:100;
+    --filterdecv3:visible;
+}
+
+:root:has(#amg:checked){
+    --filterdecp4:static;
+    --filterdecz4:100;
+    --filterdecv4:visible;
+}
+
+#main-container {
+    padding-bottom: 50px;
+}
+
+.sect-title {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 60px;
+    top: -5000px;
+}
+
+main > nav >#filternav {
+    z-index: 999;
+    top: 0;
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    background-color: #9A031E;
+    color: aliceblue;
+    left : var(--filterslide);
+    transition: all 0.8s linear 0.1s;
+}
+
+main nav #filternav #title-filter-nav {
+    display: grid;
+    align-items: center;
+    grid-template-areas: '. . title title icon ';
+    box-shadow: 0px 4px 5px #fff;
+}
+
+#filternav > #title-filter-nav > label {
+    border-left: 1px solid #fff;
+    padding-left: 7px;
+}
+
+#filternav > #filternames {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#filternav > #filternames > .filters {
+    padding-left: 20px;
+    box-shadow: 0px 2px 3px #fff;
+}
+
+#filter-open {
+    position: fixed;
+    box-shadow: #000 1px 1px 5px;
+    background-color: #fff;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    left: 10px;
+    margin-top: 10px;
+    border: #9A031E 3px solid;
+    border-radius: 2px;
+    top: 50px;
+    z-index: 998;
+}
+
+#sect1,
+#sect-t1 {
+    position: var(--filterdecp1);
+    z-index: var(--filterdecz1);
+    visibility: var(--filterdecv1);
+}
+
+#sect2,
+#sect-t2 {
+    position: var(--filterdecp2);
+    z-index: var(--filterdecz2);
+    visibility: var(--filterdecv2);
+}
+
+#sect3,
+#sect-t3 {
+    position: var(--filterdecp3);
+    z-index: var(--filterdecz3);
+    visibility: var(--filterdecv3);
+}
+
+#sect4,
+#sect-t4 {
+    position: var(--filterdecp4);
+    z-index: var(--filterdecz4);
+    visibility: var(--filterdecv4);
+}
+
+.section {
+    top: -5000px;
+    display: grid;
+    grid-template-columns: var(--grid-temp);
+    align-items: center;
+    justify-items: center;
+    row-gap: 15px;
+}
+
+article {
+    width: var(--articlew);
+    height: 400px;
+    padding: 10px;
+    overflow-y: auto;
+    text-align: center;
+    border: #9A031E solid 2px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+article::-webkit-scrollbar {
+    display: none;
+}
+
+article.empty-articles {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: -100;
+    top: 0px;
+}
+
+.productpic {
+    height: auto;
+    width: 200px;
+    border-radius: 15px;
+    border: 1px solid;
+    box-shadow: #000 1px 2px 4px;
+}
+
+button.buy {
+    width: calc( var(--articlew) - 20px);
+    height: 45px;
+    border-radius: 20px;
+    background-color: #9A031E;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 1px 2px 5px #000;
+}
+
+button.buy:disabled {
+    background-color: #333;
+}
+
+@media (max-width:950px) {
+    :root {
+        --articlew: 200px;
+        --grid-temp: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:700px) {
+    :root {
+        --articlew: 220px;
+        --grid-temp: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    :root {
+        --articlew: 250px;
+        --grid-temp: repeat(1, 1fr);
+    }
+    article {
+        height: auto;
+    }
+}

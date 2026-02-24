@@ -1,0 +1,137 @@
+#top > #navbar > a > #nav-btn1.nav-btn {
+  background-color: #9A031E;
+  color: #FFC75F;
+}
+
+#bg-hdr {
+  height: 400px;
+  width: 100%;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  top: 50px;
+  background-color: black;
+}
+
+#top-vid {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hdr-title {
+  position: absolute;
+  color: #9A031E;
+  top: 130px;
+  margin-left: 5%;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-shadow: 1px 1px 5px #E6E8E6;
+}
+
+#bg-hdr > #hdr-title h1{
+  background-color: #fff4;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px black;
+  font-size: 40px;
+}
+
+#hdr-btn {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: #9A031E;
+  font-size: 20px;
+  font-weight: bold;
+  color: #F19A3E;
+  border: none;
+  box-shadow: 1px 1px 5px #F19A3E;
+  transition: all 1s ease-out;
+}
+
+#hdr-btn:hover {
+  color: #9A031E;
+  background-color: transparent;
+  border: 1px solid #9A031E;
+  box-shadow: 0px 0px 8px #9A031E;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:  "box-1 box-1 box-1 box-1 . ."
+                        ". . box-2 box-2 box-2 box-2"
+                        "box-3 box-3 box-3 box-3 . ."
+                        ". . box-4 box-4 box-4 box-4"
+                        "box-5 box-5 box-5 box-5 . ."
+                        ". . box-6 box-6 box-6 box-6"
+                        ;
+  row-gap: 10px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card {
+  border: none;
+  margin: 50px;
+  max-width: 457px;
+  min-width: 290px;
+  max-height: 450px;
+  box-shadow: 3px 3px 5px #222;
+  padding: 10px;
+  border-radius: 3em;
+  animation: cardsanimate 5s alternate 2s infinite;
+}
+
+.card:nth-of-type(2n) {
+  justify-self: end;
+}
+
+.cardimg {
+  width: 100%;
+  height: auto;
+  border-radius: 3em;
+}
+
+.card-title {
+  text-align: center;
+  color: #9A031E;
+  font-size: 2rem;
+}
+
+.card-content {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0px 1.5rem;
+}
+
+@media (max-width: 600px) {
+  #content {
+    grid-template-areas:"box-1 box-1 box-1 box-1 box-1 box-1"
+                        "box-2 box-2 box-2 box-2 box-2 box-2"
+                        "box-3 box-3 box-3 box-3 box-3 box-3"
+                        "box-4 box-4 box-4 box-4 box-4 box-4"
+                        "box-5 box-5 box-5 box-5 box-5 box-5"
+                        "box-6 box-6 box-6 box-6 box-6 box-6";
+  }
+}
+
+@media (max-width: 430px) {
+ #bg-hdr > #hdr-title h1 {
+  font-size: 30px;
+ } 
+}
+
+@keyframes cardsanimate {
+  from {
+    scale: 0.8;
+  }
+  to {
+    scale: 1.0;
+  }
+}
